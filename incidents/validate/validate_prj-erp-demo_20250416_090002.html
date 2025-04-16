@@ -1,0 +1,167 @@
+
+<html><head><title>OneStack Validation Report</title>
+<style>
+body { font-family: sans-serif; padding: 2em; }
+table { border-collapse: collapse; width: 100%; }
+th, td { border: 1px solid #ccc; padding: 0.5em; }
+th { background-color: #f0f0f0; }
+</style></head><body>
+<h1>📋 Validation Report</h1>
+
+<h2>lookup_employee_sid.parquet (node-employees)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>23</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['employee_sid']</td></tr>
+  <tr><th>IDs</th><td>['employee_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'employee_id': 'int64', 'employee_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['employee_id', 'employee_sid']</td></tr>
+</table>
+
+<h2>dim_employees.parquet (node-employees)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>23</td></tr>
+  <tr><th>Columns</th><td>9</td></tr>
+  <tr><th>SIDs</th><td>['employee_sid']</td></tr>
+  <tr><th>IDs</th><td>['employee_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'employee_sid': 'int64', 'employee_id': 'int64', 'FirstName': 'object', 'MiddleInitial': 'object', 'LastName': 'object', 'BirthDate': 'object', 'Gender': 'object', 'CityID': 'int64', 'HireDate': 'object'}</td></tr>
+  <tr><th>Sample</th><td>['employee_sid', 'employee_id', 'FirstName', 'MiddleInitial', 'LastName']</td></tr>
+</table>
+
+<h2>fact_sales.parquet (node-sales)</h2>
+<table>
+  <tr><th>Status</th><td>⚠️ Nullwerte</td></tr>
+  <tr><th>Rows</th><td>6758125</td></tr>
+  <tr><th>Columns</th><td>11</td></tr>
+  <tr><th>SIDs</th><td>['customer_sid', 'product_sid']</td></tr>
+  <tr><th>IDs</th><td>['customer_id', 'product_id']</td></tr>
+  <tr><th>Nulls</th><td>{'SalesDate': 67526}</td></tr>
+  <tr><th>Types</th><td>{'SalesID': 'int64', 'SalesPersonID': 'int64', 'customer_id': 'int64', 'product_id': 'int64', 'Quantity': 'int64', 'Discount': 'float64', 'TotalPrice': 'float64', 'SalesDate': 'object', 'TransactionNumber': 'object', 'customer_sid': 'int64', 'product_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['SalesID', 'SalesPersonID', 'customer_id', 'product_id', 'Quantity']</td></tr>
+</table>
+
+<h2>lookup_category_sid.parquet (node-categories)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>11</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['category_sid']</td></tr>
+  <tr><th>IDs</th><td>['category_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'category_id': 'int64', 'category_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['category_id', 'category_sid']</td></tr>
+</table>
+
+<h2>dim_categories.parquet (node-categories)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>11</td></tr>
+  <tr><th>Columns</th><td>3</td></tr>
+  <tr><th>SIDs</th><td>['category_sid']</td></tr>
+  <tr><th>IDs</th><td>['category_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'category_sid': 'int64', 'category_id': 'int64', 'CategoryName': 'object'}</td></tr>
+  <tr><th>Sample</th><td>['category_sid', 'category_id', 'CategoryName']</td></tr>
+</table>
+
+<h2>lookup_city_sid.parquet (node-cities)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>96</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['city_sid']</td></tr>
+  <tr><th>IDs</th><td>['city_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'city_id': 'int64', 'city_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['city_id', 'city_sid']</td></tr>
+</table>
+
+<h2>dim_cities.parquet (node-cities)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>96</td></tr>
+  <tr><th>Columns</th><td>5</td></tr>
+  <tr><th>SIDs</th><td>['city_sid']</td></tr>
+  <tr><th>IDs</th><td>['city_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'city_sid': 'int64', 'city_id': 'int64', 'CityName': 'object', 'Zipcode': 'int64', 'CountryID': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['city_sid', 'city_id', 'CityName', 'Zipcode', 'CountryID']</td></tr>
+</table>
+
+<h2>dim_customers.parquet (node-customers)</h2>
+<table>
+  <tr><th>Status</th><td>⚠️ Nullwerte</td></tr>
+  <tr><th>Rows</th><td>98759</td></tr>
+  <tr><th>Columns</th><td>7</td></tr>
+  <tr><th>SIDs</th><td>['customer_sid']</td></tr>
+  <tr><th>IDs</th><td>['customer_id']</td></tr>
+  <tr><th>Nulls</th><td>{'MiddleInitial': 977}</td></tr>
+  <tr><th>Types</th><td>{'customer_sid': 'int64', 'customer_id': 'int64', 'FirstName': 'object', 'MiddleInitial': 'object', 'LastName': 'object', 'CityID': 'int64', 'Address': 'object'}</td></tr>
+  <tr><th>Sample</th><td>['customer_sid', 'customer_id', 'FirstName', 'MiddleInitial', 'LastName']</td></tr>
+</table>
+
+<h2>lookup_customer_sid.parquet (node-customers)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>98759</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['customer_sid']</td></tr>
+  <tr><th>IDs</th><td>['customer_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'customer_id': 'int64', 'customer_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['customer_id', 'customer_sid']</td></tr>
+</table>
+
+<h2>lookup_country_sid.parquet (node-countries)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>206</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['country_sid']</td></tr>
+  <tr><th>IDs</th><td>['country_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'country_id': 'int64', 'country_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['country_id', 'country_sid']</td></tr>
+</table>
+
+<h2>dim_countries.parquet (node-countries)</h2>
+<table>
+  <tr><th>Status</th><td>⚠️ Nullwerte</td></tr>
+  <tr><th>Rows</th><td>206</td></tr>
+  <tr><th>Columns</th><td>4</td></tr>
+  <tr><th>SIDs</th><td>['country_sid']</td></tr>
+  <tr><th>IDs</th><td>['country_id']</td></tr>
+  <tr><th>Nulls</th><td>{'CountryCode': 1}</td></tr>
+  <tr><th>Types</th><td>{'country_sid': 'int64', 'country_id': 'int64', 'CountryName': 'object', 'CountryCode': 'object'}</td></tr>
+  <tr><th>Sample</th><td>['country_sid', 'country_id', 'CountryName', 'CountryCode']</td></tr>
+</table>
+
+<h2>lookup_product_sid.parquet (node-products)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>452</td></tr>
+  <tr><th>Columns</th><td>2</td></tr>
+  <tr><th>SIDs</th><td>['product_sid']</td></tr>
+  <tr><th>IDs</th><td>['product_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'product_id': 'int64', 'product_sid': 'int64'}</td></tr>
+  <tr><th>Sample</th><td>['product_id', 'product_sid']</td></tr>
+</table>
+
+<h2>dim_products.parquet (node-products)</h2>
+<table>
+  <tr><th>Status</th><td>✅ OK</td></tr>
+  <tr><th>Rows</th><td>452</td></tr>
+  <tr><th>Columns</th><td>10</td></tr>
+  <tr><th>SIDs</th><td>['product_sid']</td></tr>
+  <tr><th>IDs</th><td>['product_id']</td></tr>
+  <tr><th>Nulls</th><td>{}</td></tr>
+  <tr><th>Types</th><td>{'product_sid': 'int64', 'product_id': 'int64', 'ProductName': 'object', 'Price': 'float64', 'CategoryID': 'int64', 'Class': 'object', 'ModifyDate': 'object', 'Resistant': 'object', 'IsAllergic': 'object', 'VitalityDays': 'float64'}</td></tr>
+  <tr><th>Sample</th><td>['product_sid', 'product_id', 'ProductName', 'Price', 'CategoryID']</td></tr>
+</table>
+
+</body></html>
