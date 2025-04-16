@@ -1,0 +1,196 @@
+- node: node-employees
+  file: lookup_employee_sid.parquet
+  columns: 2
+  sample_cols: employee_id, employee_sid
+  surrogates:
+  - employee_sid
+  bids:
+  - employee_id
+  nulls: {}
+  types:
+    employee_id: int64
+    employee_sid: int64
+- node: node-employees
+  file: dim_employees.parquet
+  columns: 9
+  sample_cols: employee_sid, employee_id, FirstName, MiddleInitial, LastName
+  surrogates:
+  - employee_sid
+  bids:
+  - employee_id
+  nulls: {}
+  types:
+    employee_sid: int64
+    employee_id: int64
+    FirstName: object
+    MiddleInitial: object
+    LastName: object
+    BirthDate: object
+    Gender: object
+    CityID: int64
+    HireDate: object
+- node: node-sales
+  file: fact_sales.parquet
+  columns: 11
+  sample_cols: SalesID, SalesPersonID, customer_id, product_id, Quantity
+  surrogates:
+  - customer_sid
+  - product_sid
+  bids:
+  - customer_id
+  - product_id
+  nulls:
+    SalesDate: 67526
+  types:
+    SalesID: int64
+    SalesPersonID: int64
+    customer_id: int64
+    product_id: int64
+    Quantity: int64
+    Discount: float64
+    TotalPrice: float64
+    SalesDate: object
+    TransactionNumber: object
+    customer_sid: int64
+    product_sid: int64
+- node: node-categories
+  file: lookup_category_sid.parquet
+  columns: 2
+  sample_cols: category_id, category_sid
+  surrogates:
+  - category_sid
+  bids:
+  - category_id
+  nulls: {}
+  types:
+    category_id: int64
+    category_sid: int64
+- node: node-categories
+  file: dim_categories.parquet
+  columns: 3
+  sample_cols: category_sid, category_id, CategoryName
+  surrogates:
+  - category_sid
+  bids:
+  - category_id
+  nulls: {}
+  types:
+    category_sid: int64
+    category_id: int64
+    CategoryName: object
+- node: node-cities
+  file: lookup_city_sid.parquet
+  columns: 2
+  sample_cols: city_id, city_sid
+  surrogates:
+  - city_sid
+  bids:
+  - city_id
+  nulls: {}
+  types:
+    city_id: int64
+    city_sid: int64
+- node: node-cities
+  file: dim_cities.parquet
+  columns: 5
+  sample_cols: city_sid, city_id, CityName, Zipcode, CountryID
+  surrogates:
+  - city_sid
+  bids:
+  - city_id
+  nulls: {}
+  types:
+    city_sid: int64
+    city_id: int64
+    CityName: object
+    Zipcode: int64
+    CountryID: int64
+- node: node-customers
+  file: dim_customers.parquet
+  columns: 7
+  sample_cols: customer_sid, customer_id, FirstName, MiddleInitial, LastName
+  surrogates:
+  - customer_sid
+  bids:
+  - customer_id
+  nulls:
+    MiddleInitial: 977
+  types:
+    customer_sid: int64
+    customer_id: int64
+    FirstName: object
+    MiddleInitial: object
+    LastName: object
+    CityID: int64
+    Address: object
+- node: node-customers
+  file: lookup_customer_sid.parquet
+  columns: 2
+  sample_cols: customer_id, customer_sid
+  surrogates:
+  - customer_sid
+  bids:
+  - customer_id
+  nulls: {}
+  types:
+    customer_id: int64
+    customer_sid: int64
+- node: node-countries
+  file: lookup_country_sid.parquet
+  columns: 2
+  sample_cols: country_id, country_sid
+  surrogates:
+  - country_sid
+  bids:
+  - country_id
+  nulls: {}
+  types:
+    country_id: int64
+    country_sid: int64
+- node: node-countries
+  file: dim_countries.parquet
+  columns: 4
+  sample_cols: country_sid, country_id, CountryName, CountryCode
+  surrogates:
+  - country_sid
+  bids:
+  - country_id
+  nulls:
+    CountryCode: 1
+  types:
+    country_sid: int64
+    country_id: int64
+    CountryName: object
+    CountryCode: object
+- node: node-products
+  file: lookup_product_sid.parquet
+  columns: 2
+  sample_cols: product_id, product_sid
+  surrogates:
+  - product_sid
+  bids:
+  - product_id
+  nulls: {}
+  types:
+    product_id: int64
+    product_sid: int64
+- node: node-products
+  file: dim_products.parquet
+  columns: 10
+  sample_cols: product_sid, product_id, ProductName, Price, CategoryID
+  surrogates:
+  - product_sid
+  bids:
+  - product_id
+  nulls: {}
+  types:
+    product_sid: int64
+    product_id: int64
+    ProductName: object
+    Price: float64
+    CategoryID: int64
+    Class: object
+    ModifyDate: object
+    Resistant: object
+    IsAllergic: object
+    VitalityDays: float64

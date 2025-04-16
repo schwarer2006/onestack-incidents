@@ -1,0 +1,148 @@
+
+    <html>
+    <head>
+        <title>🧪 OneStack Validierungsreport</title>
+        <style>
+            body { font-family: sans-serif; margin: 20px; }
+            h2 { margin-top: 40px; }
+            table { border-collapse: collapse; width: 100%; margin-bottom: 40px; }
+            th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+            th { background: #eee; }
+        </style>
+    </head>
+    <body>
+    <h1>🧪 Validierungsreport</h1>
+    
+        <h2>lookup_employee_sid.parquet (node-employees)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['employee_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['employee_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>employee_id, employee_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'employee_id': 'int64', 'employee_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_employees.parquet (node-employees)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>9</td></tr>
+            <tr><th>Surrogate Keys</th><td>['employee_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['employee_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>employee_sid, employee_id, FirstName, MiddleInitial, LastName</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'employee_sid': 'int64', 'employee_id': 'int64', 'FirstName': 'object', 'MiddleInitial': 'object', 'LastName': 'object', 'BirthDate': 'object', 'Gender': 'object', 'CityID': 'int64', 'HireDate': 'object'}</pre></td></tr>
+        </table>
+    
+        <h2>fact_sales.parquet (node-sales)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>11</td></tr>
+            <tr><th>Surrogate Keys</th><td>['customer_sid', 'product_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['customer_id', 'product_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>SalesID, SalesPersonID, customer_id, product_id, Quantity</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{'SalesDate': 67526}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'SalesID': 'int64', 'SalesPersonID': 'int64', 'customer_id': 'int64', 'product_id': 'int64', 'Quantity': 'int64', 'Discount': 'float64', 'TotalPrice': 'float64', 'SalesDate': 'object', 'TransactionNumber': 'object', 'customer_sid': 'int64', 'product_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>lookup_category_sid.parquet (node-categories)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['category_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['category_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>category_id, category_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'category_id': 'int64', 'category_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_categories.parquet (node-categories)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>3</td></tr>
+            <tr><th>Surrogate Keys</th><td>['category_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['category_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>category_sid, category_id, CategoryName</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'category_sid': 'int64', 'category_id': 'int64', 'CategoryName': 'object'}</pre></td></tr>
+        </table>
+    
+        <h2>lookup_city_sid.parquet (node-cities)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['city_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['city_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>city_id, city_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'city_id': 'int64', 'city_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_cities.parquet (node-cities)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>5</td></tr>
+            <tr><th>Surrogate Keys</th><td>['city_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['city_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>city_sid, city_id, CityName, Zipcode, CountryID</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'city_sid': 'int64', 'city_id': 'int64', 'CityName': 'object', 'Zipcode': 'int64', 'CountryID': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_customers.parquet (node-customers)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>7</td></tr>
+            <tr><th>Surrogate Keys</th><td>['customer_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['customer_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>customer_sid, customer_id, FirstName, MiddleInitial, LastName</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{'MiddleInitial': 977}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'customer_sid': 'int64', 'customer_id': 'int64', 'FirstName': 'object', 'MiddleInitial': 'object', 'LastName': 'object', 'CityID': 'int64', 'Address': 'object'}</pre></td></tr>
+        </table>
+    
+        <h2>lookup_customer_sid.parquet (node-customers)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['customer_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['customer_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>customer_id, customer_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'customer_id': 'int64', 'customer_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>lookup_country_sid.parquet (node-countries)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['country_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['country_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>country_id, country_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'country_id': 'int64', 'country_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_countries.parquet (node-countries)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>4</td></tr>
+            <tr><th>Surrogate Keys</th><td>['country_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['country_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>country_sid, country_id, CountryName, CountryCode</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{'CountryCode': 1}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'country_sid': 'int64', 'country_id': 'int64', 'CountryName': 'object', 'CountryCode': 'object'}</pre></td></tr>
+        </table>
+    
+        <h2>lookup_product_sid.parquet (node-products)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>2</td></tr>
+            <tr><th>Surrogate Keys</th><td>['product_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['product_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>product_id, product_sid</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'product_id': 'int64', 'product_sid': 'int64'}</pre></td></tr>
+        </table>
+    
+        <h2>dim_products.parquet (node-products)</h2>
+        <table>
+            <tr><th>Spaltenanzahl</th><td>10</td></tr>
+            <tr><th>Surrogate Keys</th><td>['product_sid']</td></tr>
+            <tr><th>BID Felder</th><td>['product_id']</td></tr>
+            <tr><th>Beispielspalten</th><td>product_sid, product_id, ProductName, Price, CategoryID</td></tr>
+            <tr><th>Null-Werte</th><td><pre>{}</pre></td></tr>
+            <tr><th>Datentypen</th><td><pre>{'product_sid': 'int64', 'product_id': 'int64', 'ProductName': 'object', 'Price': 'float64', 'CategoryID': 'int64', 'Class': 'object', 'ModifyDate': 'object', 'Resistant': 'object', 'IsAllergic': 'object', 'VitalityDays': 'float64'}</pre></td></tr>
+        </table>
+    
+    </body>
+    </html>
+    
